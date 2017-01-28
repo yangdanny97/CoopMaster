@@ -1,5 +1,6 @@
 package com.example.danny.project1;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
@@ -27,16 +28,20 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Intent intent = getIntent();
+        Context context = this.getApplicationContext();
 
-        File data = getFilesDir();
+        File path = context.getFilesDir();
+        String filename = "Coop Master";
+        File file = new File(path, filename);
+
         ArrayList<Integer> date = new ArrayList<Integer>();
         ArrayList<Integer> eggs = new ArrayList<Integer>();
         try {
-            BufferedReader bf = new BufferedReader(new FileReader(data));
+            BufferedReader bf = new BufferedReader(new FileReader(file));
             String str;
             while((str = bf.readLine()) != null) {
                 String[] arg = str.split(",");
+                System.out.println(str);
                 date.add(Integer.parseInt(arg[0]));
                 eggs.add(Integer.parseInt(arg[1]));
             }

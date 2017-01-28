@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,28 +20,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void submitData(View view) {
-
+        Context context = this.getApplicationContext();
         EditText date = (EditText) findViewById(R.id.editText1);
         EditText eggs = (EditText) findViewById(R.id.editText2);
+
+        //Initialize File
+        File path = context.getFilesDir();
+        String filename = "Coop Master";
+	    File file = new File(path, filename);
+
+        //
         String enteredDate = date.getText().toString();
         String enteredEggs = eggs.getText().toString();
-        /*intent.putExtra(DATE, enteredDate);
-        intent.putExtra(EGG, enteredEggs);*/
-	
-	File file = new File("Coop Master");
-        String filename = "Coop Master";
-        String string = enteredDate + "," + enteredEggs;
+        String string = enteredDate + "," + enteredEggs + "\n";
         FileOutputStream outputStream;
 
         try {
-             outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-             outputStream.write(string.getBytes());
-             outputStream.close();
+            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write(string.getBytes());
+            outputStream.close();
+            date.setText("");
+            eggs.setText("");
+            Toast.makeText(MainActivity.this, "Saved Data!", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-             e.printStackTrace();
-            }
-
-
+            e.printStackTrace();
+        }
     }
 
     public void viewGraph (View view){
