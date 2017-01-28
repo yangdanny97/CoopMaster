@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         FileOutputStream outputStream;
 
         try {
-            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream = openFileOutput(filename, Context.MODE_APPEND);
             outputStream.write(string.getBytes());
             outputStream.close();
             date.setText("");
@@ -51,4 +51,21 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
+
+    public void resetAllData (View view) {
+        Context context = this.getApplicationContext();
+        File path = context.getFilesDir();
+        String filename = "Coop Master";
+        File file = new File(path, filename);
+
+        FileOutputStream outputStream;
+        try {
+            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write("".getBytes());
+            Toast.makeText(MainActivity.this, "Reset All Data!", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
