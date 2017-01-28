@@ -22,6 +22,20 @@ public class MainActivity extends AppCompatActivity {
         String enteredEggs = eggs.getText().toString();
         /*intent.putExtra(DATE, enteredDate);
         intent.putExtra(EGG, enteredEggs);*/
+	
+	File file = new File("Coop Master");
+        String filename = "Coop Master";
+        String string = enteredDate + "," + enteredEggs;
+        FileOutputStream outputStream;
+
+        try {
+             outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+             outputStream.write(string.getBytes());
+             outputStream.close();
+        } catch (Exception e) {
+             e.printStackTrace();
+            }
+
 
     }
 
