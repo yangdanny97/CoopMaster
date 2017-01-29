@@ -10,6 +10,7 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.PointsGraphSeries;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,6 +20,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 
 
@@ -54,7 +56,27 @@ public class Main2Activity extends AppCompatActivity {
             d[i] = new DataPoint(date.get(i), eggs.get(i));
         }
 
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(d);
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(d);
+        PointsGraphSeries<DataPoint> series1 = new PointsGraphSeries<DataPoint>(d);
+        series1.setSize(12);
+
+        //Axis
+        graph.getGridLabelRenderer().setVerticalAxisTitleTextSize(40);
+        graph.getGridLabelRenderer().setVerticalAxisTitle("Egg Count");
+
+        graph.getGridLabelRenderer().setHorizontalAxisTitleTextSize(40);
+        graph.getGridLabelRenderer().setHorizontalAxisTitle("Day");
+
+        graph.getViewport().setXAxisBoundsManual(true);
+        graph.getViewport().setMinX(date.get(0));
+        graph.getViewport().setMaxX(date.get(date.size() - 1));
+
+        graph.getViewport().setYAxisBoundsManual(true);
+        graph.getViewport().setMinY(0);
+        graph.getViewport().setMaxY(Collections.max(eggs)*6/5);
+
+        //Plot Graph
         graph.addSeries(series);
+        graph.addSeries(series1);
     }
 }
