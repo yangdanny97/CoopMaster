@@ -10,14 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.danny.project1.Main2Activity">
 
-    <com.jjoe64.graphview.GraphView
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:id="@+id/graph"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <TextView
         android:text="Egg Yield"
         android:textSize="20dp"
@@ -26,5 +18,14 @@
         android:layout_above="@+id/graph"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
-        android:id="@+id/EggYield" />
+        android:id="@+id/EggYield"
+        android:textColor="@android:color/black" />
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:id="@+id/graph"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

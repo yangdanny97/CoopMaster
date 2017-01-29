@@ -61,6 +61,7 @@ public class Main2Activity extends AppCompatActivity {
         series1.setSize(12);
 
         //Axis
+        graph.getGridLabelRenderer().setTextSize(40);
         graph.getGridLabelRenderer().setVerticalAxisTitleTextSize(40);
         graph.getGridLabelRenderer().setVerticalAxisTitle("Egg Count");
 
@@ -69,11 +70,13 @@ public class Main2Activity extends AppCompatActivity {
 
         graph.getViewport().setXAxisBoundsManual(true);
         graph.getViewport().setMinX(date.get(0));
-        graph.getViewport().setMaxX(date.get(date.size() - 1));
+        graph.getViewport().setMaxX(date.get(date.size() - 1) + 0.2);
 
         graph.getViewport().setYAxisBoundsManual(true);
         graph.getViewport().setMinY(0);
         graph.getViewport().setMaxY(Collections.max(eggs)*6/5);
+
+        graph.getViewport().setScrollable(true);
 
         //Plot Graph
         graph.addSeries(series);
