@@ -13,35 +13,13 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/editText1"
-        android:hint="Today's date"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editText2"
-        android:hint="Enter number of eggs"
+        android:hint="# Eggs Collected"
         android:layout_below="@+id/editText1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_below="@+id/editText2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:hint="Water Remaining " />
 
     <EditText
         android:layout_width="wrap_content"
@@ -52,7 +30,7 @@
         android:layout_alignRight="@+id/editText3"
         android:layout_alignEnd="@+id/editText3"
         android:id="@+id/editText4"
-        android:hint="Feed Left" />
+        android:hint="Feed Remaining (weight)" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -106,6 +84,28 @@
         android:layout_alignEnd="@+id/editText5"
         android:id="@+id/editText6"
         android:hint="Humidity" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:hint="Water Remaining (vol)"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editText1"
+        android:hint="Today's date"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
 

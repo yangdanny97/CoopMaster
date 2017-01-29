@@ -38,6 +38,10 @@ public class Main2Activity extends AppCompatActivity {
 
         ArrayList<Integer> date = new ArrayList<Integer>();
         ArrayList<Integer> eggs = new ArrayList<Integer>();
+        ArrayList<Integer> water = new ArrayList<Integer>();
+        ArrayList<Integer> feed = new ArrayList<Integer>();
+        ArrayList<Integer> temp = new ArrayList<Integer>();
+        ArrayList<Integer> hum = new ArrayList<Integer>();
         try {
             BufferedReader bf = new BufferedReader(new FileReader(file));
             String str;
@@ -46,6 +50,10 @@ public class Main2Activity extends AppCompatActivity {
                 System.out.println(str);
                 date.add(Integer.parseInt(arg[0]));
                 eggs.add(Integer.parseInt(arg[1]));
+                water.add(Integer.parseInt(arg[2]));
+                feed.add(Integer.parseInt(arg[3]));
+                temp.add(Integer.parseInt(arg[4]));
+                hum.add(Integer.parseInt(arg[5]));
             }
         } catch (IOException e) {
         }
@@ -81,5 +89,153 @@ public class Main2Activity extends AppCompatActivity {
         //Plot Graph
         graph.addSeries(series);
         graph.addSeries(series1);
+
+
+
+
+
+
+        GraphView graph2 = (GraphView) findViewById(R.id.graph2);
+        DataPoint[] d2 = new DataPoint[date.size()];
+        for(int i = 0;i < date.size();i++) {
+            d2[i] = new DataPoint(date.get(i), water.get(i));
+        }
+
+        LineGraphSeries<DataPoint> series2 = new LineGraphSeries<DataPoint>(d2);
+        PointsGraphSeries<DataPoint> series21 = new PointsGraphSeries<DataPoint>(d2);
+        series21.setSize(12);
+
+        //Axis
+        graph2.getGridLabelRenderer().setTextSize(40);
+        graph2.getGridLabelRenderer().setVerticalAxisTitleTextSize(40);
+        graph2.getGridLabelRenderer().setVerticalAxisTitle("Water Remaining");
+
+        graph2.getGridLabelRenderer().setHorizontalAxisTitleTextSize(40);
+        graph2.getGridLabelRenderer().setHorizontalAxisTitle("Day");
+
+        graph2.getViewport().setXAxisBoundsManual(true);
+        graph2.getViewport().setMinX(date.get(0));
+        graph2.getViewport().setMaxX(date.get(date.size() - 1) + 0.2);
+
+        graph2.getViewport().setYAxisBoundsManual(true);
+        graph2.getViewport().setMinY(0);
+        graph2.getViewport().setMaxY(Collections.max(water)*6/5);
+
+        graph2.getViewport().setScrollable(true);
+
+        //Plot Graph
+        graph2.addSeries(series2);
+        graph2.addSeries(series21);
+
+
+
+
+
+        GraphView graph3 = (GraphView) findViewById(R.id.graph3);
+        DataPoint[] d3 = new DataPoint[date.size()];
+        for(int i = 0;i < date.size();i++) {
+            d3[i] = new DataPoint(date.get(i), feed.get(i));
+        }
+
+        LineGraphSeries<DataPoint> series3 = new LineGraphSeries<DataPoint>(d3);
+        PointsGraphSeries<DataPoint> series31 = new PointsGraphSeries<DataPoint>(d3);
+        series31.setSize(12);
+
+        //Axis
+        graph3.getGridLabelRenderer().setTextSize(40);
+        graph3.getGridLabelRenderer().setVerticalAxisTitleTextSize(40);
+        graph3.getGridLabelRenderer().setVerticalAxisTitle("Feed Remaining");
+
+        graph3.getGridLabelRenderer().setHorizontalAxisTitleTextSize(40);
+        graph3.getGridLabelRenderer().setHorizontalAxisTitle("Day");
+
+        graph3.getViewport().setXAxisBoundsManual(true);
+        graph3.getViewport().setMinX(date.get(0));
+        graph3.getViewport().setMaxX(date.get(date.size() - 1) + 0.2);
+
+        graph3.getViewport().setYAxisBoundsManual(true);
+        graph3.getViewport().setMinY(0);
+        graph3.getViewport().setMaxY(Collections.max(feed)*6/5);
+
+        graph3.getViewport().setScrollable(true);
+
+        //Plot Graph
+        graph3.addSeries(series3);
+        graph3.addSeries(series31);
+
+
+
+
+
+
+        GraphView graph4 = (GraphView) findViewById(R.id.graph4);
+        DataPoint[] d4 = new DataPoint[date.size()];
+        for(int i = 0;i < date.size();i++) {
+            d4[i] = new DataPoint(date.get(i), temp.get(i));
+        }
+
+        LineGraphSeries<DataPoint> series4 = new LineGraphSeries<DataPoint>(d4);
+        PointsGraphSeries<DataPoint> series41 = new PointsGraphSeries<DataPoint>(d4);
+        series41.setSize(12);
+
+        //Axis
+        graph4.getGridLabelRenderer().setTextSize(40);
+        graph4.getGridLabelRenderer().setVerticalAxisTitleTextSize(40);
+        graph4.getGridLabelRenderer().setVerticalAxisTitle("Temperature");
+
+        graph4.getGridLabelRenderer().setHorizontalAxisTitleTextSize(40);
+        graph4.getGridLabelRenderer().setHorizontalAxisTitle("Day");
+
+        graph4.getViewport().setXAxisBoundsManual(true);
+        graph4.getViewport().setMinX(date.get(0));
+        graph4.getViewport().setMaxX(date.get(date.size() - 1) + 0.2);
+
+        graph4.getViewport().setYAxisBoundsManual(true);
+        graph4.getViewport().setMinY(0);
+        graph4.getViewport().setMaxY(Collections.max(temp)*6/5);
+
+        graph4.getViewport().setScrollable(true);
+
+        //Plot Graph
+        graph4.addSeries(series4);
+        graph4.addSeries(series41);
+
+
+
+
+
+
+        GraphView graph5 = (GraphView) findViewById(R.id.graph5);
+        DataPoint[] d5 = new DataPoint[date.size()];
+        for(int i = 0;i < date.size();i++) {
+            d5[i] = new DataPoint(date.get(i), hum.get(i));
+        }
+
+        LineGraphSeries<DataPoint> series5 = new LineGraphSeries<DataPoint>(d5);
+        PointsGraphSeries<DataPoint> series51 = new PointsGraphSeries<DataPoint>(d5);
+        series51.setSize(12);
+
+        //Axis
+        graph5.getGridLabelRenderer().setTextSize(40);
+        graph5.getGridLabelRenderer().setVerticalAxisTitleTextSize(40);
+        graph5.getGridLabelRenderer().setVerticalAxisTitle("Humidity");
+
+        graph5.getGridLabelRenderer().setHorizontalAxisTitleTextSize(40);
+        graph5.getGridLabelRenderer().setHorizontalAxisTitle("Day");
+
+        graph5.getViewport().setXAxisBoundsManual(true);
+        graph5.getViewport().setMinX(date.get(0));
+        graph5.getViewport().setMaxX(date.get(date.size() - 1) + 0.2);
+
+        graph5.getViewport().setYAxisBoundsManual(true);
+        graph5.getViewport().setMinY(0);
+        graph5.getViewport().setMaxY(Collections.max(hum)*6/5);
+
+        graph5.getViewport().setScrollable(true);
+
+        //Plot Graph
+        graph5.addSeries(series5);
+        graph5.addSeries(series51);
+
     }
 }

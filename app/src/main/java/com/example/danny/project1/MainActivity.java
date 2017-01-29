@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         Context context = this.getApplicationContext();
         EditText date = (EditText) findViewById(R.id.editText1);
         EditText eggs = (EditText) findViewById(R.id.editText2);
+        EditText water = (EditText) findViewById(R.id.editText3);
+        EditText feed = (EditText) findViewById(R.id.editText4);
+        EditText temp = (EditText) findViewById(R.id.editText5);
+        EditText hum = (EditText) findViewById(R.id.editText6);
 
         //Initialize File
         File path = context.getFilesDir();
@@ -32,18 +36,29 @@ public class MainActivity extends AppCompatActivity {
         //
         String enteredDate = date.getText().toString();
         String enteredEggs = eggs.getText().toString();
-        String string = enteredDate + "," + enteredEggs + "\n";
-        FileOutputStream outputStream;
-
-        try {
-            outputStream = openFileOutput(filename, Context.MODE_APPEND);
-            outputStream.write(string.getBytes());
-            outputStream.close();
-            date.setText("");
-            eggs.setText("");
-            Toast.makeText(MainActivity.this, "Saved Data!", Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            e.printStackTrace();
+        String enteredWater = water.getText().toString();
+        String enteredFeed = feed.getText().toString();
+        String enteredTemp = temp.getText().toString();
+        String enteredHum = hum.getText().toString();
+        if (enteredDate.equals("") || enteredEggs.equals("") || enteredWater.equals("") ||enteredFeed.equals("")||enteredTemp.equals("")||enteredHum.equals("")){
+            Toast.makeText(MainActivity.this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
+        } else{
+            String string = enteredDate + "," + enteredEggs + "," + enteredWater+ "," + enteredFeed+ "," + enteredTemp+ "," + enteredHum+ "\n";
+            FileOutputStream outputStream;
+            try {
+                outputStream = openFileOutput(filename, Context.MODE_APPEND);
+                outputStream.write(string.getBytes());
+                outputStream.close();
+                date.setText("");
+                eggs.setText("");
+                feed.setText("");
+                water.setText("");
+                temp.setText("");
+                hum.setText("");
+                Toast.makeText(MainActivity.this, "Data Saved", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
