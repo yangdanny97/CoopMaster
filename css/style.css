@@ -102,7 +102,7 @@ float:left;
 }
 
 .demo{
-	width:80vh;
+	width:55vh;
 }
 .profile-image{
 	width:150px;
@@ -121,11 +121,11 @@ float:left;
 
 @media screen and (max-width: 992px) {
 	h4{
-		font-size: 3vh;
+		font-size: 4vh;
 	}
 
 	p, li{
-		font-size: 3vh;
+		font-size: 4vh;
 	}
 
 	.row{
