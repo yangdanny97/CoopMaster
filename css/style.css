@@ -144,5 +144,10 @@ float:left;
 	.navicon{
 		float:right;
 	}
-
+	.background-2 {
+		height:10vh;
+	}
+	.demo{
+		width:40vh;
+	}
 }
