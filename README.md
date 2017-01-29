@@ -21,7 +21,9 @@ Roosting times- planned hardware sensor that monitors roosting times for chicken
 What we implemented:
 
 
-We implemented a data entry and storage system, as well as a system that displays the data in a graph. The manual data entry and display for egg production, remaining chicken feed, and water levels are fully implemented, as well as a demonstration of the other components using hardcoded data (since we don’t have a chicken flock to collect data from). The app is available in both ios and Android so it is accessible to all chicken owners.
+We implemented a data entry and storage system, as well as a system that displays the data in a graph. The manual data entry and display for egg production, remaining chicken feed, and water levels are fully implemented, as well as a demonstration of the other components using hardcoded data (since we don’t have a chicken flock to collect data from). 
+
+The app is available in both ios and Android so it is accessible to all chicken owners. The android app is fully functional, while the iOS app currently supports tracking of egg production.
 
 
 Plans for the future:
