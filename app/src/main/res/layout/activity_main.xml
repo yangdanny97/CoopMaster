@@ -102,7 +102,7 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/editText1"
-        android:hint="Today's date"
+        android:hint="Day Number 1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

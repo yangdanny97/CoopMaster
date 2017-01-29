@@ -38,26 +38,26 @@ public class Main2Activity extends AppCompatActivity {
 
         ArrayList<Integer> date = new ArrayList<Integer>();
         ArrayList<Integer> eggs = new ArrayList<Integer>();
-        ArrayList<Integer> water = new ArrayList<Integer>();
-        ArrayList<Integer> feed = new ArrayList<Integer>();
-        ArrayList<Integer> temp = new ArrayList<Integer>();
-        ArrayList<Integer> hum = new ArrayList<Integer>();
+        ArrayList<Double> water = new ArrayList<Double>();
+        ArrayList<Double> feed = new ArrayList<Double>();
+        ArrayList<Double> temp = new ArrayList<Double>();
+        ArrayList<Double> hum = new ArrayList<Double>();
         try {
             BufferedReader bf = new BufferedReader(new FileReader(file));
             String str;
             while((str = bf.readLine()) != null) {
                 String[] arg = str.split(",");
-                System.out.println(str);
                 date.add(Integer.parseInt(arg[0]));
                 eggs.add(Integer.parseInt(arg[1]));
-                water.add(Integer.parseInt(arg[2]));
-                feed.add(Integer.parseInt(arg[3]));
-                temp.add(Integer.parseInt(arg[4]));
-                hum.add(Integer.parseInt(arg[5]));
+                water.add(Double.parseDouble(arg[2]));
+                feed.add(Double.parseDouble(arg[3]));
+                temp.add(Double.parseDouble(arg[4]));
+                hum.add(Double.parseDouble(arg[5]));
             }
         } catch (IOException e) {
         }
 
+        //Egg Plot
         GraphView graph = (GraphView) findViewById(R.id.graph);
         DataPoint[] d = new DataPoint[date.size()];
         for(int i = 0;i < date.size();i++) {
@@ -90,11 +90,7 @@ public class Main2Activity extends AppCompatActivity {
         graph.addSeries(series);
         graph.addSeries(series1);
 
-
-
-
-
-
+        //Water Plot
         GraphView graph2 = (GraphView) findViewById(R.id.graph2);
         DataPoint[] d2 = new DataPoint[date.size()];
         for(int i = 0;i < date.size();i++) {
@@ -127,10 +123,7 @@ public class Main2Activity extends AppCompatActivity {
         graph2.addSeries(series2);
         graph2.addSeries(series21);
 
-
-
-
-
+        //Feed Plot
         GraphView graph3 = (GraphView) findViewById(R.id.graph3);
         DataPoint[] d3 = new DataPoint[date.size()];
         for(int i = 0;i < date.size();i++) {
@@ -163,11 +156,7 @@ public class Main2Activity extends AppCompatActivity {
         graph3.addSeries(series3);
         graph3.addSeries(series31);
 
-
-
-
-
-
+        //Temperature Plot
         GraphView graph4 = (GraphView) findViewById(R.id.graph4);
         DataPoint[] d4 = new DataPoint[date.size()];
         for(int i = 0;i < date.size();i++) {
@@ -200,11 +189,7 @@ public class Main2Activity extends AppCompatActivity {
         graph4.addSeries(series4);
         graph4.addSeries(series41);
 
-
-
-
-
-
+        //Humidity Plot
         GraphView graph5 = (GraphView) findViewById(R.id.graph5);
         DataPoint[] d5 = new DataPoint[date.size()];
         for(int i = 0;i < date.size();i++) {

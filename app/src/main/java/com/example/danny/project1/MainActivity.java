@@ -14,11 +14,14 @@ import java.io.FileOutputStream;
 public class MainActivity extends AppCompatActivity {
     public final static String DATE = "com.example.project1.MESSAGE";
     public final static String EGG = "com.example.project1.MESSAGE";
+    public static int day = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     public void submitData(View view) {
         Context context = this.getApplicationContext();
         EditText date = (EditText) findViewById(R.id.editText1);
@@ -33,15 +36,21 @@ public class MainActivity extends AppCompatActivity {
         String filename = "Coop Master";
 	    File file = new File(path, filename);
 
-        //
+        //Convert input to String
         String enteredDate = date.getText().toString();
         String enteredEggs = eggs.getText().toString();
         String enteredWater = water.getText().toString();
         String enteredFeed = feed.getText().toString();
         String enteredTemp = temp.getText().toString();
         String enteredHum = hum.getText().toString();
+
+        double dat = Double.parseDouble(enteredDate);
+
+        //Fill out all fields and write to output file.
         if (enteredDate.equals("") || enteredEggs.equals("") || enteredWater.equals("") ||enteredFeed.equals("")||enteredTemp.equals("")||enteredHum.equals("")){
             Toast.makeText(MainActivity.this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
+        } else if (dat - Math.floor(dat) > 0) {
+            Toast.makeText(MainActivity.this, "Please enter an integer date", Toast.LENGTH_SHORT).show();
         } else{
             String string = enteredDate + "," + enteredEggs + "," + enteredWater+ "," + enteredFeed+ "," + enteredTemp+ "," + enteredHum+ "\n";
             FileOutputStream outputStream;
@@ -56,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 temp.setText("");
                 hum.setText("");
                 Toast.makeText(MainActivity.this, "Data Saved", Toast.LENGTH_SHORT).show();
+                day++;
+                date.setHint("Day Number " + day);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -67,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //Reset all data.
     public void resetAllData (View view) {
         Context context = this.getApplicationContext();
         File path = context.getFilesDir();
@@ -81,6 +93,10 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        EditText date = (EditText) findViewById(R.id.editText1);
+        day = 1;
+        date.setHint("Day Number 1");
     }
 
 }

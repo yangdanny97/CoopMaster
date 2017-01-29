@@ -22,24 +22,25 @@
             android:layout_marginStart="13dp" />
 
         <com.jjoe64.graphview.GraphView
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:id="@+id/graph" />
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:id="@+id/graph" />
 
-    <TextView
-        android:text="Water"
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:id="@+id/WaterView"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp" />
+        <TextView
+            android:text="Water"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:id="@+id/WaterView"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp" />
 
-    <com.jjoe64.graphview.GraphView
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:id="@+id/graph2" />
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:id="@+id/graph2" />
+
         <TextView
             android:text="Feed"
             android:textSize="20dp"
@@ -49,10 +50,12 @@
             android:id="@+id/FeedView"
             android:layout_marginLeft="13dp"
             android:layout_marginStart="13dp" />
-    <com.jjoe64.graphview.GraphView
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        android:id="@+id/graph3" />
+
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:id="@+id/graph3" />
+
         <TextView
             android:text="Temperature"
             android:textSize="20dp"
@@ -62,10 +65,12 @@
             android:id="@+id/TempView"
             android:layout_marginLeft="13dp"
             android:layout_marginStart="13dp" />
+
         <com.jjoe64.graphview.GraphView
             android:layout_width="match_parent"
             android:layout_height="200dip"
             android:id="@+id/graph4" />
+
         <TextView
             android:text="Humidity"
             android:textSize="20dp"
