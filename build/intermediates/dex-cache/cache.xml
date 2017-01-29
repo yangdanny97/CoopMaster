@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="837ae1146c9a36dde1e61b7c803d0d01bd7243ae">
+        sha1="c57632c20042f4c621e019c2fca9b028dc61965f">
         <dex dex="C:\Users\danny\OneDrive\Documents\GitHub\CoopMaster\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_490cd1cc2731d3ad11e6e883621354e4ade3dbca\classes.dex" />
     </item>
     <item
@@ -88,7 +88,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6855f345cb679b8123a70488c65137f6f3eaa83e">
+        sha1="4861ee6f698a56e4bd85ad861e476471a04b84f3">
         <dex dex="C:\Users\danny\OneDrive\Documents\GitHub\CoopMaster\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_1abb58f4fcbab450a0f06abc45a1f0f15a8bbb68\classes.dex" />
     </item>
     <item

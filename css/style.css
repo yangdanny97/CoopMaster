@@ -100,6 +100,10 @@ float:left;
 	width:300px;
 	margin-top:10vh;
 }
+
+.demo{
+	width:30vw;
+}
 .profile-image{
 	width:150px;
 	border-radius:50%;
